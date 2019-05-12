@@ -1,0 +1,10 @@
+- serviceName: user-service
+  livenessUrl: http://user-service:8080/health
+  livenessInterval: 15
+  restart: true
+  failAfter: 2
+- serviceName: game-service
+  livenessUrl: http://game-service:8080/health
+  livenessInterval: 15
+  restart: true
+  failAfter: 2
