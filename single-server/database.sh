@@ -9,7 +9,7 @@ docker run -d --name crazerace-db \
 
 
 # Starts database admin ui
-docker run -d --name pgweb -p 8081:8081 \
+docker run -d --name pgweb -p 18081:8081 \
     --network crazerace --restart always \
     sosedoff/pgweb
 
