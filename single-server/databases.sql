@@ -1,0 +1,41 @@
+-- Service databases
+
+CREATE DATABASE directory;
+CREATE DATABASE texts;
+CREATE DATABASE games;
+
+CREATE ROLE userservice
+WITH LOGIN PASSWORD 'password';
+GRANT ALL PRIVILEGES ON DATABASE directory TO userservice;
+
+CREATE ROLE textservice
+WITH LOGIN PASSWORD 'password';
+GRANT ALL PRIVILEGES ON DATABASE texts TO textservice;
+
+CREATE ROLE gameservice
+WITH LOGIN PASSWORD 'password';
+GRANT ALL PRIVILEGES ON DATABASE games TO gameservice;
+
+-- Personal users
+
+CREATE ROLE tobbe
+WITH LOGIN PASSWORD 'password';
+GRANT ALL PRIVILEGES ON DATABASE directory TO tobbe;
+GRANT ALL PRIVILEGES ON DATABASE texts TO tobbe;
+GRANT ALL PRIVILEGES ON DATABASE games TO tobbe;
+
+CREATE ROLE simon
+WITH LOGIN PASSWORD 'password';
+GRANT ALL PRIVILEGES ON DATABASE directory TO simon;
+GRANT ALL PRIVILEGES ON DATABASE texts TO simon;
+GRANT ALL PRIVILEGES ON DATABASE games TO simon;
+
+-- Analytics user
+
+CREATE ROLE analytics
+WITH LOGIN PASSWORD 'password';
+GRANT CONNECT ON DATABASE directory TO analytics;
+GRANT CONNECT ON DATABASE texts TO analytics;
+GRANT CONNECT ON DATABASE games TO analytics;
+GRANT USAGE ON SCHEMA public TO analytics;
+
