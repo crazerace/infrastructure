@@ -6,4 +6,4 @@ docker run -d --name game-service -p 8082:8080 \
     -e DB_USERNAME='gameservice' -e DB_NAME='games' \
     -e DB_PASSWORD=$GAME_SERVICE_DB_PASSWORD \
     -e JWT_SECRET=$JWT_SECRET \
-    registry/game-service:0.1
+    eu.gcr.io/crazerace/game-service:1.0-RC

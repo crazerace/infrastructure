@@ -5,5 +5,4 @@ docker run -d --name text-service -p 8081:8080 \
     -e DB_HOST='crazerace-db' -e DB_PORT='5432' \
     -e DB_USERNAME='textservice' -e DB_NAME='texts' \
     -e DB_PASSWORD=$TEXT_SERVICE_DB_PASSWORD \
-    -e JWT_SECRET=$JWT_SECRET \
-    registry/user-service:0.1
+    eu.gcr.io/crazerace/text-service:1.0-RC
