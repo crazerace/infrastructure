@@ -24,8 +24,22 @@ scrape_configs:
     static_configs:
       - targets: ['crazerace.com']
 
-  # Scrape the Node Exporter every 5 seconds.
   - job_name: 'cadvisor'
     scrape_interval: 5s
     static_configs:
       - targets: ['cadvisor:8080']
+
+  - job_name: 'user-service'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['user-service:8080']
+
+  - job_name: 'text-service'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['text-service:8080']
+
+  - job_name: 'game-service'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['game-service:8080']
