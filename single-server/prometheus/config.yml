@@ -43,3 +43,8 @@ scrape_configs:
     scrape_interval: 5s
     static_configs:
       - targets: ['game-service:8080']
+
+  - job_name: 'httplogger'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['httplogger:8080']

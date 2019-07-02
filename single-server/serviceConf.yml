@@ -13,3 +13,8 @@
   livenessInterval: 15
   restart: true
   failAfter: 2
+- serviceName: httplogger
+  livenessUrl: http://httplogger:8080/health
+  livenessInterval: 15
+  restart: true
+  failAfter: 2
