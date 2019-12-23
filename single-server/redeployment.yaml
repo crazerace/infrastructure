@@ -1,0 +1,29 @@
+authentication:
+    key: alg=scrypt$N=16384$r=8$p=1$keyLen=32$hash=d404f1762933076fefb1eb0c7e85a8cdc2adb9ac4b1100e1c4be32699a8081cd
+    salt: 92ebf7bc005468b22bf69c7c6b55ce53
+services:
+    user-service:
+        id: user-service
+        binary: /bin/sh
+        script: /var/scripts/start-user-service.sh
+        mustMatch: "^eu.gcr.io/crazerace/user-service:.*"
+    text-service:
+        id: text-service
+        binary: /bin/sh
+        script: /var/scripts/start-text-service.sh
+        mustMatch: "^eu.gcr.io/crazerace/text-service:.*"
+    game-service:
+        id: game-service
+        binary: /bin/sh
+        script: /var/scripts/start-game-service.sh
+        mustMatch: "^eu.gcr.io/crazerace/game-service:.*"
+    httplogger:
+        id: httplogger
+        binary: /bin/sh
+        script: /var/scripts/start-httplogger.sh
+        mustMatch: "^czarsimon/httplogger:.*"
+    dockmon:
+        id: dockmon
+        binary: /bin/sh
+        script: /var/scripts/start-dockmon.sh
+        mustMatch: "^czarsimon/dockmon:.*"
